@@ -129,6 +129,8 @@ namespace BerTlv
                 {
                     ParseTlv(tlv.Value, tlv.Children);
                 }
+                
+                while (i < rawTlv.Length && rawTlv[i] == 0) i++;  // Skip zero breaks
             }
         }
 
